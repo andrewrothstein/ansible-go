@@ -1,0 +1,17 @@
+---
+- name: (Fedora) install dependent packages
+  when: ansible_distribution == "Fedora"
+  environment: proxy_env
+  yum: name={{ item }}
+  with_items:
+    - tar
+
+- name: download go archive...
+  environment: proxy_env
+  get_url: url={{go_archive_url}} dest='/tmp/{{ go_archive }}'
+  
+- name: install go...
+  unarchive: copy=no src='/tmp/{{ go_archive }}' dest='/usr/local'
+  
+- name: set go environment variables
+  copy: src=go.sh dest=/etc/profile.d/go.sh mode=644
