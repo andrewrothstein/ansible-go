@@ -1,4 +1,3 @@
 ---
-go_name : 'go{{go_ver}}.{{go_platform}}'
-go_tgz : '{{go_name}}.tar.gz'
-go_tgz_url : 'https://storage.googleapis.com/golang/{{go_tgz}}'
+go_ver : '1.5.3'
+go_platform : 'linux-amd64'
