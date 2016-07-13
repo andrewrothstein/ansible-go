@@ -1,21 +1,23 @@
 ---
 - name: download go archive...
+  become: yes
+  become_user: root
   get_url: >
     url={{go_tgz_url}}
     dest=/tmp/{{go_tgz}}
-    owner=root
-    group=root
     mode=0644
 
 - name: mkdir target
+  become: yes
+  become_user: root
   file: >-
     state=directory
     path=/opt/{{go_name}}
-    owner=root
-    group=root
     mode=0755
     
 - name: unarchive go...
+  become: yes
+  become_user: root
   unarchive: >
     copy=no
     src=/tmp/{{go_tgz}}
@@ -23,15 +25,17 @@
     creates=/opt/{{go_name}}/go/bin/go
 
 - name: link /opt/go
+  become: yes
+  become_user: root
   file: >-
     src=/opt/{{go_name}}
     dest=/opt/go
     state=link
   
 - name: set go environment variables
+  become: yes
+  become_user: root
   copy: >
     src=go.sh
     dest=/etc/profile.d/go.sh
     mode=0644
-    owner=root
-    group=root
