@@ -7,31 +7,15 @@
     dest=/tmp/{{go_tgz}}
     mode=0644
 
-- name: mkdir target
-  become: yes
-  become_user: root
-  file: >-
-    state=directory
-    path=/opt/{{go_name}}
-    mode=0755
-    
 - name: unarchive go...
   become: yes
   become_user: root
   unarchive: >
     copy=no
     src=/tmp/{{go_tgz}}
-    dest=/opt/{{go_name}}
-    creates=/opt/{{go_name}}/go/bin/go
+    dest=/usr/local
+    creates=/usr/local/bin/go
 
-- name: link /opt/go
-  become: yes
-  become_user: root
-  file: >-
-    src=/opt/{{go_name}}
-    dest=/opt/go
-    state=link
-  
 - name: set go environment variables
   become: yes
   become_user: root
