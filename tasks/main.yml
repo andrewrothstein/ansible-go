@@ -14,7 +14,7 @@
     copy=no
     src=/tmp/{{go_tgz}}
     dest=/usr/local
-    creates=/usr/local/bin/go
+    creates=/usr/local/go/bin/go
 
 - name: set go environment variables
   become: yes
