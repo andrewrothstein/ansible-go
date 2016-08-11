@@ -19,7 +19,7 @@
 - name: set go environment variables
   become: yes
   become_user: root
-  copy: >
-    src=go.sh
+  template: >
+    src=go.sh.j2
     dest=/etc/profile.d/go.sh
     mode=0644

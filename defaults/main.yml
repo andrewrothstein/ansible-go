@@ -1,3 +1,4 @@
 ---
 go_ver : '1.6.3'
 go_platform : 'linux-amd64'
+go_path : '$HOME/go-work'
