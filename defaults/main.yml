@@ -1,4 +1,4 @@
 ---
-go_ver : '1.6.3'
+go_ver : '1.7.1'
 go_platform : 'linux-amd64'
 go_path : '$HOME/go-work'

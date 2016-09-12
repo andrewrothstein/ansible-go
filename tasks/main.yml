@@ -7,19 +7,36 @@
     dest=/tmp/{{go_tgz}}
     mode=0644
 
+- name: create go version directory
+  become: yes
+  become_user: root
+  file: >-
+    path=/usr/local/{{go_name}}
+    state=directory
+    
 - name: unarchive go...
   become: yes
   become_user: root
   unarchive: >
     copy=no
     src=/tmp/{{go_tgz}}
-    dest=/usr/local
-    creates=/usr/local/go/bin/go
+    dest=/usr/local/{{go_name}}
+    creates=/usr/local/{{go_name}}/go
 
+- name: link in latest go
+  become: yes
+  become_user: root
+  file: >-
+    src=/usr/local/{{go_name}}/go
+    dest=/usr/local/go
+    state=link
+    
 - name: set go environment variables
   become: yes
   become_user: root
+  with_items:
+    - etc/profile.d/go.sh
   template: >
-    src=go.sh.j2
-    dest=/etc/profile.d/go.sh
+    src={{item}}.j2
+    dest=/{{item}}
     mode=0644
