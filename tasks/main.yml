@@ -1,4 +1,16 @@
 ---
+- name: get version of go if installed
+  command: /usr/local/go/bin/go version
+  register: installed_go_ver
+  ignore_errors: true
+  changed_when: false
+
+- name: remove existing go installation to upgrade
+  file:
+    path: /usr/local/go
+    state: absent
+  when: installed_go_ver.rc == 0 and go_ver not in installed_go_ver.stdout
+  
 - name: download go archive...
   become: yes
   become_user: root
