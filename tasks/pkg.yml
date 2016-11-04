@@ -1,0 +1,8 @@
+---
+- name: installing golang packages...
+  become_user: root
+  become: '{{go_privilege_escalate}}'
+  with_items: '{{go_pkg_list |default([])}}'
+  package:
+    name: '{{item}}'
+    state: present
