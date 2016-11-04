@@ -13,7 +13,7 @@
   file: >-
     path=/usr/local/{{go_name}}
     state=directory
-
+    
 - name: unarchive go...
   become: yes
   become_user: root

@@ -8,14 +8,4 @@
       - "{{ansible_os_family}}.yml"
       skip: true
 
-- name: install go using package manager...
-  become: '{{go_privilege_escalation | default(True)}}'
-  become_user: root
-  when: '{{go_install_using_pkg_manager || default(False)}}'
-  package: name=go state=present
-
-- name: install go from tgz ...
-  become: '{{go_privilege_escalation | default(True)}}'
-  become_user: root
-  include: tgz.yml
-  when: '{{go_install_using_pkg_manager || default(True)}}'
+- include: '{{go_installer | default("tgz") }}.yml'
