@@ -15,12 +15,15 @@ galaxy_info:
         - 23
     - name: Ubuntu
       versions:
-        - trusty
-        - xenial
+        - all
+    - name: MacOSX
+      versions:
+        - all
 
   galaxy_tags:
-    - development
+    - go
+    - golang
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
-    version: v1.0.3
+    version: v1.0.4

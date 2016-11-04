@@ -2,3 +2,4 @@
 go_ver : '1.7.1'
 go_platform : 'linux-amd64'
 go_path : '$HOME/go-work'
+go_root: '/usr/local/go'

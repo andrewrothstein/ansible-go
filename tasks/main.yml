@@ -1,42 +1,21 @@
 ---
-- name: download go archive...
-  become: yes
-  become_user: root
-  get_url: >
-    url={{go_tgz_url}}
-    dest=/tmp/{{go_tgz}}
-    mode=0644
+- name: resolve platform specific vars
+  include_vars: "{{item}}"
+  with_first_found:
+    - files:
+      - "{{ansible_distribution}}-{{ansible_distribution_release}}.yml"
+      - "{{ansible_distribution}}.yml"
+      - "{{ansible_os_family}}.yml"
+      skip: true
 
-- name: create go version directory
-  become: yes
+- name: install go using package manager...
+  become: '{{go_privilege_escalation | default(True)}}'
   become_user: root
-  file: >-
-    path=/usr/local/{{go_name}}
-    state=directory
-    
-- name: unarchive go...
-  become: yes
-  become_user: root
-  unarchive: >
-    copy=no
-    src=/tmp/{{go_tgz}}
-    dest=/usr/local/{{go_name}}
-    creates=/usr/local/{{go_name}}/go
+  when: '{{go_install_using_pkg_manager || default(False)}}'
+  package: name=go state=present
 
-- name: link in latest go
-  become: yes
+- name: install go from tgz ...
+  become: '{{go_privilege_escalation | default(True)}}'
   become_user: root
-  file: >-
-    src=/usr/local/{{go_name}}/go
-    dest=/usr/local/go
-    state=link
-    
-- name: set go environment variables
-  become: yes
-  become_user: root
-  with_items:
-    - etc/profile.d/go.sh
-  template: >
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
+  include: tgz.yml
+  when: '{{go_install_using_pkg_manager || default(True)}}'
