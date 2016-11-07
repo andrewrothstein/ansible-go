@@ -30,13 +30,13 @@
     src=/usr/local/{{go_name}}/go
     dest=/usr/local/go
     state=link
-    
+
 - name: set go environment variables
   become: yes
   become_user: root
   with_items:
-    - etc/profile.d/go.sh
+    - go.sh
   template: >
     src={{item}}.j2
-    dest=/{{item}}
+    dest={{go_profile_dir}}/{{item}}
     mode=0644

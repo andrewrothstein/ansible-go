@@ -1,5 +1,6 @@
 ---
-go_privilege_escalate: False
+go_privilege_escalation : False
 go_installer: pkg
 go_pkg_list:
   - go
+go_profile_dir: ~/.profile.d
