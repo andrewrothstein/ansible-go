@@ -2,7 +2,3 @@
 go_name : 'go{{go_ver}}.{{go_platform}}'
 go_tgz : '{{go_name}}.tar.gz'
 go_tgz_url : 'https://storage.googleapis.com/golang/{{go_tgz}}'
-go_env_block: |
-  export GOROOT={{ go_root }}
-  export GOPATH={{ go_path }}
-  export PATH=$PATH:${GOROOT}/bin:${GOPATH}/bin

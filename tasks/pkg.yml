@@ -8,11 +8,12 @@
     name: '{{item}}'
     state: present
 
-- name: set environment variables
-  when: go_installed | changed
-  blockinfile:
-    dest: ~/.bash_profile
-    create: yes
-    marker: "# {mark} ANSIBLE MANAGED BLOCK golang environment variables"
-    block: |
-      {{ go_env_block }}
+- name: set go environment variables
+  become_user: root
+  become: '{{go_privilege_escalation}}'
+  with_items:
+    - go.sh
+  template: >
+    src={{item}}.j2
+    dest={{go_profile_dir}}/{{item}}
+    mode=0644
