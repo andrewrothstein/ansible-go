@@ -44,4 +44,6 @@
 - name: install godep
   become: yes
   become_user: root
-  command: go get github.com/tools/godep
+  shell: . {{go_profile_dir}}/go.sh && go get github.com/tools/godep
+  args:
+    creates: '{{go_path}}/src/github.com/tools/godep'
