@@ -40,3 +40,10 @@
     src={{item}}.j2
     dest={{go_profile_dir}}/{{item}}
     mode=0644
+
+- name: install godep
+  become: yes
+  become_user: root
+  shell: . {{go_profile_dir}}/go.sh && go get github.com/tools/godep
+  args:
+    creates: '{{go_path}}/src/github.com/tools/godep'
