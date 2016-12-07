@@ -2,3 +2,5 @@
 go_name : 'go{{go_ver}}.{{go_platform}}'
 go_tgz : '{{go_name}}.tar.gz'
 go_tgz_url : 'https://storage.googleapis.com/golang/{{go_tgz}}'
+go_root: '{{go_parent_dir}}/go'
+go_dir: '{{go_parent_dir}}/{{go_name}}'

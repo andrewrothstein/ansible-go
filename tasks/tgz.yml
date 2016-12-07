@@ -11,8 +11,9 @@
   become: yes
   become_user: root
   file: >-
-    path=/usr/local/{{go_name}}
+    path={{go_dir}}
     state=directory
+    mode=0755
     
 - name: unarchive go...
   become: yes
@@ -20,16 +21,27 @@
   unarchive: >
     copy=no
     src=/tmp/{{go_tgz}}
-    dest=/usr/local/{{go_name}}
-    creates=/usr/local/{{go_name}}/go
+    dest={{go_dir}}
+    creates={{go_dir}}/go
 
 - name: link in latest go
   become: yes
   become_user: root
   file: >-
-    src=/usr/local/{{go_name}}/go
-    dest=/usr/local/go
+    src={{go_dir}}/go
+    dest={{go_parent_dir}}/go
     state=link
+
+- name: install godep
+  become: yes
+  become_user: root
+  environment:
+    GOROOT: '{{go_root}}'
+    GOPATH: '{{go_path}}'
+    PATH: '{{go_root}}/bin:{{go_path}}/bin'
+  command: /usr/local/go/bin/go get github.com/tools/godep
+  args:
+    creates: '{{go_path}}/src/github.com/tools/godep'
 
 - name: set go environment variables
   become: yes
@@ -41,9 +53,3 @@
     dest={{go_profile_dir}}/{{item}}
     mode=0644
 
-- name: install godep
-  become: yes
-  become_user: root
-  shell: . {{go_profile_dir}}/go.sh && go get github.com/tools/godep
-  args:
-    creates: '{{go_path}}/src/github.com/tools/godep'
