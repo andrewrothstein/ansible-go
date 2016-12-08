@@ -32,16 +32,18 @@
     dest={{go_parent_dir}}/go
     state=link
 
-- name: install godep
+- name: install go pkgs
   become: yes
   become_user: root
   environment:
     GOROOT: '{{go_root}}'
     GOPATH: '{{go_path}}'
     PATH: '{{go_root}}/bin:{{go_path}}/bin'
-  command: go get github.com/tools/godep
+  with_items:
+    - github.com/tools/godep
+  command: go get {{item}}
   args:
-    creates: '{{go_path}}/src/github.com/tools/godep'
+    creates: '{{go_path}}/src/{{item}}'
 
 - name: set go environment variables
   become: yes
