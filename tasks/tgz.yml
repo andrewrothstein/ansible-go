@@ -39,7 +39,7 @@
     GOROOT: '{{go_root}}'
     GOPATH: '{{go_path}}'
     PATH: '{{go_root}}/bin:{{go_path}}/bin'
-  command: /usr/local/go/bin/go get github.com/tools/godep
+  command: go get github.com/tools/godep
   args:
     creates: '{{go_path}}/src/github.com/tools/godep'
 
