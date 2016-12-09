@@ -4,3 +4,4 @@ go_platform : linux-amd64
 
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
+go_privilege_escalation: True
