@@ -19,6 +19,9 @@ galaxy_info:
     - name: MacOSX
       versions:
         - all
+    - name: Alpine
+      versions:
+        - all
 
   galaxy_tags:
     - go
@@ -27,5 +30,3 @@ galaxy_info:
 dependencies:
   - role: andrewrothstein.unarchive-deps
     version: v1.0.5
-  - role: spk83.bash-profile
-    version: v1.0.0

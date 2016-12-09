@@ -1,6 +1,6 @@
 ---
 go_ver : '1.7.4'
 go_platform : linux-amd64
-go_path : '$HOME/go-work'
+
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d

@@ -32,26 +32,3 @@
     dest={{go_parent_dir}}/go
     state=link
 
-- name: install go pkgs
-  become: yes
-  become_user: root
-  environment:
-    GOROOT: '{{go_root}}'
-    GOPATH: '{{go_path}}'
-    PATH: '{{go_root}}/bin:{{go_path}}/bin'
-  with_items:
-    - github.com/tools/godep
-  command: go get {{item}}
-  args:
-    creates: '{{go_path}}/src/{{item}}'
-
-- name: set go environment variables
-  become: yes
-  become_user: root
-  with_items:
-    - go.sh
-  template: >
-    src={{item}}.j2
-    dest={{go_profile_dir}}/{{item}}
-    mode=0644
-

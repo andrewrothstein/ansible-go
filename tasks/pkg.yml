@@ -8,12 +8,3 @@
     name: '{{item}}'
     state: present
 
-- name: set go environment variables
-  become_user: root
-  become: '{{go_privilege_escalation}}'
-  with_items:
-    - go.sh
-  template: >
-    src={{item}}.j2
-    dest={{go_profile_dir}}/{{item}}
-    mode=0644
