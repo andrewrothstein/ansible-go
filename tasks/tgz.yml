@@ -1,6 +1,6 @@
 ---
 - name: download go archive...
-  become: yes
+  become: '{{go_privilege_escalation}}'
   become_user: root
   get_url: >
     url={{go_tgz_url}}
@@ -8,7 +8,7 @@
     mode=0644
 
 - name: create go version directory
-  become: yes
+  become: '{{go_privilege_escalation}}'
   become_user: root
   file: >-
     path={{go_dir}}
@@ -16,7 +16,7 @@
     mode=0755
     
 - name: unarchive go...
-  become: yes
+  become: '{{go_privilege_escalation}}'
   become_user: root
   unarchive: >
     copy=no
@@ -25,7 +25,7 @@
     creates={{go_dir}}/go
 
 - name: link in latest go
-  become: yes
+  become: '{{go_privilege_escalation}}'
   become_user: root
   file: >-
     src={{go_dir}}/go
