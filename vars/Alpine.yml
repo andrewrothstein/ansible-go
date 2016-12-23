@@ -1,0 +1,6 @@
+---
+go_extra_dirs:
+  - /lib64
+go_extra_links:
+  - src: /lib/libc.musl-x86_64.so.1
+    dest: /lib64/ld-linux-x86-64.so.2

@@ -32,3 +32,21 @@
     dest={{go_parent_dir}}/go
     state=link
 
+- name: extra dirs
+  become: '{{go_privilege_escalation}}'
+  become_user: root
+  with_items: '{{go_extra_dirs|default([])}}'
+  file: >-
+    path={{item}}
+    state=directory
+    mode=0755
+
+- name: extra links
+  become: '{{go_privilege_escalation}}'
+  become_user: root
+  with_items: '{{go_extra_links|default([])}}'
+  file: >-
+    src={{item.src}}
+    dest={{item.dest}}
+    state=link
+
