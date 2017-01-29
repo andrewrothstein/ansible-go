@@ -2,32 +2,33 @@
 - name: download go archive...
   become: '{{go_privilege_escalation}}'
   become_user: root
-  get_url: >
-    url={{go_tgz_url}}
-    dest=/tmp/{{go_tgz}}
-    mode=0644
+  get_url:
+    url: '{{go_tgz_url}}'
+    dest: /tmp/{{go_tgz}}
+    checksum: '{{go_checksum}}'
+    mode: '0644'
 
 - name: create go version directory
   become: '{{go_privilege_escalation}}'
   become_user: root
-  file: >-
-    path={{go_dir}}
-    state=directory
-    mode=0755
+  file:
+    path: '{{go_dir}}'
+    state: directory
+    mode: '0755'
     
 - name: unarchive go...
   become: '{{go_privilege_escalation}}'
   become_user: root
-  unarchive: >
-    copy=no
-    src=/tmp/{{go_tgz}}
-    dest={{go_dir}}
-    creates={{go_dir}}/go
+  unarchive:
+    copy: no
+    src: /tmp/{{go_tgz}}
+    dest: '{{go_dir}}'
+    creates: '{{go_dir}}/go'
 
 - name: link in latest go
   become: '{{go_privilege_escalation}}'
   become_user: root
-  file: >-
-    src={{go_dir}}/go
-    dest={{go_parent_dir}}/go
-    state=link
+  file:
+    src: '{{go_dir}}/go'
+    dest: '{{go_parent_dir}}/go'
+    state: link

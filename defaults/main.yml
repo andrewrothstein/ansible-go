@@ -1,7 +1,9 @@
 ---
-go_ver : '1.7.4'
+go_ver : '1.7.5'
 go_platform : linux-amd64
-
+go_checksums:
+  linux-amd64: sha256:2e4dd6c44f0693bef4e7b46cc701513d74c3cc44f2419bf519d7868b12931ac3
+  darwin-amd64: sha256:2e2a5e0a5c316cf922cf7d59ee5724d49fc35b07a154f6c4196172adfc14b2ca
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
 go_privilege_escalation: True
