@@ -1,8 +1,8 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-go.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-go)
 andrewrothstein.go
 ==================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-go.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-go)
 
-Role that install [Go](https://golang.org/dl)
+Installs [Go](https://golang.org/dl)
 
 Role Variables
 --------------
