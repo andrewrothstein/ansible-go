@@ -22,13 +22,12 @@ galaxy_info:
     - name: Alpine
       versions:
         - all
-
   galaxy_tags:
     - go
     - golang
 
 dependencies:
-  - role: andrewrothstein.unarchive-deps
-    version: v1.0.6
-  - role: andrewrothstein.alpine-glibc-shim
-    version: v2.0.1
+  - src: andrewrothstein.unarchive-deps
+    version: v1.0.8
+  - src: andrewrothstein.alpine-glibc-shim
+    version: v2.0.4
