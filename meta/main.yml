@@ -28,6 +28,6 @@ galaxy_info:
 
 dependencies:
   - src: andrewrothstein.unarchive-deps
-    version: v1.0.8
+    version: v1.0.9
   - src: andrewrothstein.alpine-glibc-shim
     version: v2.0.4
