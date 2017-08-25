@@ -1,9 +1,9 @@
 ---
-go_ver : '1.8.3'
+go_ver : '1.9'
 go_platform : linux-amd64
 go_checksums:
-  darwin-amd64: sha256:f20b92bc7d4ab22aa18270087c478a74463bd64a893a94264434a38a4b167c05
-  linux-amd64: sha256:1862f4c3d3907e59b04a757cfda0ea7aa9ef39274af99a784f5be843c80c6772
+  darwin-amd64: sha256:2197814c83fc04569f5fabf030f835c95e48562afc48cbc96264665dc552f7a1
+  linux-amd64: sha256:d70eadefce8e160638a9a6db97f7192d8463069ab33138893ad3bf31b0650a79
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
 go_privilege_escalation: True
