@@ -8,7 +8,7 @@
         - "{{ansible_os_family}}.yml"
       skip: true
 
-- include: '{{go_installer | default("tgz") }}.yml'
+- include_tasks: '{{go_installer | default("tgz") }}.yml'
 
 - name: set go environment variables
   become_user: root
