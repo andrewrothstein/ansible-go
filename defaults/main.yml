@@ -1,5 +1,5 @@
 ---
-go_ver : '1.9.3'
+go_ver : '1.10'
 go_platform : linux-amd64
 go_checksums:
   '1.9.2':
@@ -8,6 +8,10 @@ go_checksums:
   '1.9.3':
     darwin-amd64: sha256:56242ed5e41ef042f908fb99482769b85712b9b49449b97cdc2c0cc0d0c20001
     linux-amd64: sha256:a4da5f4c07dfda8194c4621611aeb7ceaab98af0b38bfb29e1be2ebb04c3556c
+  '1.10':
+    darwin-amd64: sha256:511a4799e8d64cda3352bb7fe72e359689ea6ef0455329cda6b6e1f3137326c1
+    linux-amd64: sha256:b5a64335f1490277b585832d1f6c7f8c6c11206cba5cd3f771dcb87b98ad1a33
+    windows-amd64: sha256:210b223031c254a6eb8fa138c3782b23af710a9959d64b551fa81edd762ea167
     
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
