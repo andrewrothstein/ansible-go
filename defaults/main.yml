@@ -1,6 +1,6 @@
 ---
-go_ver : '1.10.3'
-go_platform : linux-amd64
+go_ver: '1.10.3'
+go_platform: linux-amd64
 
 # https://golang.org/dl/
 go_checksums:
