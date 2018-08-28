@@ -37,4 +37,4 @@ dependencies:
   - role: andrewrothstein.unarchive-deps
     version: v1.0.9
   - role: andrewrothstein.alpine-glibc-shim
-    version: v2.0.5
+    version: v2.0.7
