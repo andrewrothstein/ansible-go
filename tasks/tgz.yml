@@ -1,47 +1,47 @@
 ---
 - name: check for install...
-  become: '{{go_privilege_escalation}}'
+  become: '{{ go_privilege_escalation }}'
   stat:
-    path: '{{go_dir}}'
+    path: '{{ go_dir }}'
   changed_when: False
   register: go_binary
 - when: not go_binary.stat.exists
   block:
     - name: download go archive...
-      become: '{{go_privilege_escalation}}'
+      become: '{{ go_privilege_escalation }}'
       become_user: root
       get_url:
-        url: '{{go_tgz_url}}'
-        dest: /tmp/{{go_tgz}}
-        checksum: '{{go_checksum}}'
+        url: '{{ go_tgz_url }}'
+        dest: /tmp/{{ go_tgz }}
+        checksum: '{{ go_checksum }}'
         mode: '0644'
     - name: create go version directory
-      become: '{{go_privilege_escalation}}'
+      become: '{{ go_privilege_escalation }}'
       become_user: root
       file:
-        path: '{{go_dir}}'
+        path: '{{ go_dir }}'
         state: directory
         mode: '0755'
     - name: unarchive go...
-      become: '{{go_privilege_escalation}}'
+      become: '{{ go_privilege_escalation }}'
       become_user: root
       unarchive:
         copy: no
-        src: /tmp/{{go_tgz}}
-        dest: '{{go_dir}}'
-        creates: '{{go_dir}}/go'
+        src: /tmp/{{ go_tgz }}
+        dest: '{{ go_dir }}'
+        creates: '{{ go_dir }}/go'
   always:
     - name: cleanup
-      become: '{{go_privilege_escalation}}'
+      become: '{{ go_privilege_escalation }}'
       become_user: root
       file:
-        path: /tmp/{{go_tgz}}
+        path: /tmp/{{ go_tgz }}
         state: absent
 
 - name: link in latest go
-  become: '{{go_privilege_escalation}}'
+  become: '{{ go_privilege_escalation }}'
   become_user: root
   file:
-    src: '{{go_dir}}/go'
-    dest: '{{go_parent_dir}}/go'
+    src: '{{ go_dir }}/go'
+    dest: '{{ go_parent_dir }}/go'
     state: link
