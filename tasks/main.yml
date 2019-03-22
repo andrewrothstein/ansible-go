@@ -12,12 +12,18 @@
 
 - include_tasks: '{{ go_installer | default("tgz")  }}.yml'
 
-- name: set go environment variables
-  become_user: root
-  become: '{{ go_privilege_escalation }}'
-  with_items:
-    - go.sh
-  template:
-    src: '{{ item }}.j2'
-    dest: '{{ go_profile_dir }}/{{ item }}'
-    mode: 0644
+- block:
+    - name: ensure profile directory exists.
+      file:
+        path: '{{ go_profile_dir }}'
+        state: directory
+        mode: '0755'
+    - name: set go environment variables
+      become_user: root
+      become: '{{ go_privilege_escalation }}'
+      with_items:
+        - go.sh
+      template:
+        src: '{{ item }}.j2'
+        dest: '{{ go_profile_dir }}/{{ item }}'
+        mode: 0644
