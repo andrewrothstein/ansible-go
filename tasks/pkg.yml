@@ -1,10 +1,9 @@
 ---
 - name: installing golang packages...
   become_user: root
-  become: '{{go_privilege_escalation}}'
-  with_items: '{{go_pkg_list |default([])}}'
+  become: '{{ go_privilege_escalation }}'
+  with_items: '{{ go_pkg_list |default([]) }}'
   register: go_installed
   package:
-    name: '{{item}}'
+    name: '{{ item }}'
     state: present
-

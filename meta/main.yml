@@ -34,7 +34,7 @@ galaxy_info:
     - golang
 
 dependencies:
-  - src: andrewrothstein.unarchive-deps
-    version: v1.0.9
-  - src: andrewrothstein.alpine-glibc-shim
-    version: v2.0.5
+  - role: andrewrothstein.unarchive-deps
+    version: v1.0.10
+  - role: andrewrothstein.alpine-glibc-shim
+    version: v2.0.7

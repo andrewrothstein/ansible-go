@@ -1,29 +1,29 @@
 ---
 - name: resolve platform specific vars
-  include_vars: '{{item}}'
+  include_vars: '{{ item }}'
   with_first_found:
     - files:
-        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
-        - '{{ansible_distribution}}.yml'
-        - '{{ansible_os_family}}.yml'
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
       skip: true
       paths:
-        - '{{role_path}}/vars'
+        - '{{ role_path }}/vars'
 
-- include_tasks: '{{go_installer | default("tgz") }}.yml'
+- include_tasks: '{{ go_installer | default("tgz")  }}.yml'
 
 - block:
     - name: ensure profile directory exists.
       file:
-        path: '{{go_profile_dir}}'
+        path: '{{ go_profile_dir }}'
         state: directory
         mode: '0755'
     - name: set go environment variables
       become_user: root
-      become: '{{go_privilege_escalation}}'
+      become: '{{ go_privilege_escalation }}'
       with_items:
         - go.sh
       template:
-        src: '{{item}}.j2'
-        dest: '{{go_profile_dir}}/{{item}}'
+        src: '{{ item }}.j2'
+        dest: '{{ go_profile_dir }}/{{ item }}'
         mode: 0644
