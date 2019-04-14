@@ -1,5 +1,5 @@
 ---
-go_ver: '1.12.3'
+go_ver: '1.12.4'
 go_platform: linux-amd64
 
 # https://golang.org/dl/
@@ -42,6 +42,10 @@ go_checksums:
     darwin-amd64: sha256:edb7aad4607509e3eb9f8bd3b43fb9c419b4a007874a9f6e2f99c541411f9304
     linux-amd64: sha256:3924819eed16e55114f02d25d03e77c916ec40b7fd15c8acb5838b63135b03df
     windows-amd64: sha256:1806e089e85b84f192d782a7f70f90a32e0eccfd181405857e612f806ec04059
+  '1.12.4':
+    darwin-amd64: sha256:50af1aa6bf783358d68e125c5a72a1ba41fb83cee8f25b58ce59138896730a49
+    linux-amd64: sha256:d7d1f1f88ddfe55840712dc1747f37a790cbcaa448f6c9cf51bbe10aa65442f5
+    windows-amd64: sha256:25b043ebacca2fa2c87bbcd7463be5f34fbd225247c101888f81647fadbdfca0
 
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
