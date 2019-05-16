@@ -1,40 +1,38 @@
----
+dependencies:
+- role: andrewrothstein.unarchive-deps
+  version: v1.0.12
+- role: andrewrothstein.alpine-glibc-shim
+  version: v2.0.8
 galaxy_info:
   author: Andrew Rothstein
-  description: golang role
   company: BlackRock
+  description: golang role
+  galaxy_tags:
+  - go
+  - golang
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.4
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Archlinux
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - jessie
-        - stretch
-    - name: Ubuntu
-      versions:
-        - all
-    - name: MacOSX
-      versions:
-        - all
-    - name: Alpine
-      versions:
-        - all
-  galaxy_tags:
-    - go
-    - golang
-
-dependencies:
-  - role: andrewrothstein.unarchive-deps
-    version: v1.0.11
-  - role: andrewrothstein.alpine-glibc-shim
-    version: v2.0.8
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Archlinux
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
+    - stretch
+  - name: Ubuntu
+    versions:
+    - all
+  - name: MacOSX
+    versions:
+    - all
+  - name: Alpine
+    versions:
+    - all
