@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=1.12.6
+VER=1.12.7
 DIR=~/Downloads
 MIRROR=https://storage.googleapis.com/golang
 
@@ -15,9 +15,11 @@ dl()
     then
         wget -q -O $DLFILE $URL
     fi
-    printf "# %s\n%s-%s: sha256:%s\n" $URL $OS $PLATFORM `sha256sum $DLFILE | awk '{print $1}'`
+    printf "    # %s\n" $URL
+    printf "    %s-%s: sha256:%s\n" $OS $PLATFORM `sha256sum $DLFILE | awk '{print $1}'`
 }
 
+printf "  '%s':\n" $VER
 dl darwin amd64 tar.gz
 dl linux 386 tar.gz
 dl linux amd64 tar.gz
