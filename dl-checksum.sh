@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=1.12.8
+VER=1.12.9
 DIR=~/Downloads
 MIRROR=https://storage.googleapis.com/golang
 
