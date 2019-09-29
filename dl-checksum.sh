@@ -1,31 +1,38 @@
 #!/usr/bin/env sh
-VER=1.13
 DIR=~/Downloads
 MIRROR=https://storage.googleapis.com/golang
 
 dl()
 {
-    OS=$1
-    PLATFORM=$2
-    SUFFIX=$3
-    FILE=go${VER}.$OS-$PLATFORM.$SUFFIX
-    DLFILE=$DIR/$FILE
-    URL=$MIRROR/$FILE
-    if [ ! -e $DLFILE ]
+    local ver=$1
+    local os=$2
+    local arch=$3
+    local suffix=$4
+    local platform="${os}-${arch}"
+    local file=go$ver.$platform.$suffix
+    local dlfile=$DIR/$file
+    local url=$MIRROR/$file
+    if [ ! -e $dlfile ]
     then
-        wget -q -O $DLFILE $URL
+        wget -q -O $dlfile $url
     fi
-    printf "    # %s\n" $URL
-    printf "    %s-%s: sha256:%s\n" $OS $PLATFORM `sha256sum $DLFILE | awk '{print $1}'`
+    printf "    # %s\n" $url
+    printf "    %s: sha256:%s\n" $platform `sha256sum $dlfile | awk '{print $1}'`
 }
 
-printf "  '%s':\n" $VER
-dl darwin amd64 tar.gz
-dl linux 386 tar.gz
-dl linux amd64 tar.gz
-dl linux armv6l tar.gz
-dl linux arm64 tar.gz
-dl windows 386 zip
-dl windows amd64 zip
+dl_ver ()
+{
+    local ver=$1
+    printf "  '%s':\n" $ver
+    dl $ver darwin amd64 tar.gz
+    dl $ver linux 386 tar.gz
+    dl $ver linux amd64 tar.gz
+    dl $ver linux armv6l tar.gz
+    dl $ver linux arm64 tar.gz
+    dl $ver windows 386 zip
+    dl $ver windows amd64 zip
+}
+
+dl_ver ${1:-1.13.1}
 
 
