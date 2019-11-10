@@ -2,7 +2,7 @@ dependencies:
 - role: andrewrothstein.unarchive-deps
   version: v1.1.2
 - role: andrewrothstein.alpine-glibc-shim
-  version: v2.0.10
+  version: v2.0.11
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
