@@ -33,6 +33,4 @@ dl_ver ()
     dl $ver windows amd64 zip
 }
 
-dl_ver ${1:-1.13.4}
-
-
+dl_ver ${1:-1.13.5}
