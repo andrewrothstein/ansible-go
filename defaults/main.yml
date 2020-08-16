@@ -1,6 +1,6 @@
 ---
 go_mirror: https://storage.googleapis.com/golang
-go_ver: 1.15
+go_ver: '1.15'
 go_os: linux
 go_arch: amd64
 
