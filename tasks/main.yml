@@ -13,7 +13,7 @@
 - include_tasks: '{{ go_installer | default("tgz")  }}.yml'
 
 - block:
-    - name: ensure profile directory exists.
+    - name: ensure profile directory {{ go_profile_dir }} exists
       file:
         path: '{{ go_profile_dir }}'
         state: directory

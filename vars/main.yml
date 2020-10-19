@@ -2,6 +2,7 @@
 go_platform: '{{ go_os }}-{{ go_arch }}'
 go_name: go{{ go_ver }}.{{ go_platform }}
 go_tgz: '{{ go_name }}.tar.gz'
+go_tmp_tgz: /tmp/{{ go_tgz }}
 
 # https://storage.googleapis.com/golang/go1.15.linux-amd64.tar.gz
 go_tgz_url: '{{ go_mirror }}/{{ go_tgz }}'
