@@ -2,7 +2,7 @@ dependencies:
 - role: andrewrothstein.unarchive-deps
   version: v1.1.5
 - role: andrewrothstein.alpine-glibc-shim
-  version: v2.0.12
+  version: v2.0.13
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -22,6 +22,7 @@ galaxy_info:
     - all
   - name: Debian
     versions:
+    - bullseye
     - buster
     - stretch
   - name: EL
