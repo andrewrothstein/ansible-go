@@ -44,3 +44,14 @@
     src: '{{ go_dir }}/go'
     dest: '{{ go_parent_dir }}/go'
     state: link
+- name: linking executables...
+  become: '{{ go_privilege_escalation }}'
+  become_user: root
+  with_items:
+    - go
+    - gofmt
+  file:
+    src: '{{ go_parent_dir }}/go/bin/{{ item }}'
+    dest: '{{ go_parent_dir }}/bin/{{ item }}'
+    state: link
+
