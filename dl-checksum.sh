@@ -14,7 +14,7 @@ dl()
     local url=$MIRROR/$file
     if [ ! -e $dlfile ]
     then
-        wget -q -O $dlfile $url
+        curl -sSLf -o $dlfile $url
     fi
     printf "    # %s\n" $url
     printf "    %s: sha256:%s\n" $platform `sha256sum $dlfile | awk '{print $1}'`
@@ -33,4 +33,4 @@ dl_ver ()
     dl $ver windows amd64 zip
 }
 
-dl_ver ${1:-1.17.7}
+dl_ver ${1:-1.17.8}
