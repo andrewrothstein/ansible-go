@@ -3,7 +3,7 @@
   become: '{{ go_privilege_escalation }}'
   stat:
     path: '{{ go_dir }}'
-  changed_when: False
+  changed_when: false
   register: go_binary
 - when: not go_binary.stat.exists
   block:
@@ -26,7 +26,7 @@
       become: '{{ go_privilege_escalation }}'
       become_user: root
       unarchive:
-        copy: no
+        remote_src: true
         src: '{{ go_tmp_tgz }}'
         dest: '{{ go_dir }}'
         creates: '{{ go_dir }}/go'
@@ -54,4 +54,3 @@
     src: '{{ go_parent_dir }}/go/bin/{{ item }}'
     dest: '{{ go_parent_dir }}/bin/{{ item }}'
     state: link
-
