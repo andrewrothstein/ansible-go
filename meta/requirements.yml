@@ -2,4 +2,4 @@
 - role: andrewrothstein.unarchive-deps
   version: v1.2.3
 - role: andrewrothstein.alpine-glibc-shim
-  version: v2.0.17
+  version: v2.0.18
