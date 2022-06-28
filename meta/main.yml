@@ -30,10 +30,11 @@ galaxy_info:
     versions:
     - 35
     - 36
+  - name: MacOSX
+    versions:
+    - all
   - name: Ubuntu
     versions:
     - bionic
     - focal
-  - name: MacOSX
-    versions:
-    - all
+    - jammy
