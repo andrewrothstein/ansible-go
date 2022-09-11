@@ -24,8 +24,8 @@ dl_ver ()
 {
     local ver=$1
     printf "  '%s':\n" $ver
-    #dl $ver darwin amd64 tar.gz
-    #dl $ver darwin arm64 tar.gz
+    dl $ver darwin amd64 tar.gz
+    dl $ver darwin arm64 tar.gz
     dl $ver freebsd 386 tar.gz
     dl $ver freebsd amd64 tar.gz
     dl $ver linux 386 tar.gz
@@ -39,4 +39,4 @@ dl_ver ()
     dl $ver windows arm64 zip
 }
 
-dl_ver ${1:-1.19}
+dl_ver ${1:-1.19.1}
