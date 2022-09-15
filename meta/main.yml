@@ -1,7 +1,4 @@
 ---
-dependencies:
-- andrewrothstein.unarchive-deps
-- andrewrothstein.alpine-glibc-shim
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
