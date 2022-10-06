@@ -1,8 +1,13 @@
 ---
 go_mirror: https://storage.googleapis.com/golang
-go_ver: 1.19.1
-go_os: linux
-go_arch: amd64
+go_ver: 1.19.2
+go_arch_map:
+  386: 386
+  aarch64: arm64
+  arm64: arm64
+  ppc64le: ppc64le
+  s390x: s390x
+  x86_64: amd64
 
 go_parent_dir: /usr/local
 go_profile_dir: /etc/profile.d
@@ -1286,3 +1291,30 @@ go_checksums:
     windows-amd64: sha256:b33584c1d93b0e9c783de876b7aa99d3018bdeccd396aeb6d516a74e9d88d55f
     # https://storage.googleapis.com/golang/go1.19.1.windows-arm64.zip
     windows-arm64: sha256:d8cf3f04762fa7d5d9c82dfa15b5adaae2404463af3bc8dcd7f89837512501fe
+  '1.19.2':
+    # https://storage.googleapis.com/golang/go1.19.2.darwin-amd64.tar.gz
+    darwin-amd64: sha256:16f8047d7b627699b3773680098fbaf7cc962b7db02b3e02726f78c4db26dfde
+    # https://storage.googleapis.com/golang/go1.19.2.darwin-arm64.tar.gz
+    darwin-arm64: sha256:35d819df25197c0be45f36ce849b994bba3b0559b76d4538b910d28f6395c00d
+    # https://storage.googleapis.com/golang/go1.19.2.freebsd-386.tar.gz
+    freebsd-386: sha256:7831a406447a14d964212d07f68e77cf7fe7fb7286bade6eeb9fbea39b192984
+    # https://storage.googleapis.com/golang/go1.19.2.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:d74c88430484d14826ec21161e3b9336bd021f502b6594c4dd00e9ec730ee51d
+    # https://storage.googleapis.com/golang/go1.19.2.linux-386.tar.gz
+    linux-386: sha256:ba8c97965e0856c69c9ca2c86f96bec5bb21de43e6533e25494bb211d85cda1b
+    # https://storage.googleapis.com/golang/go1.19.2.linux-amd64.tar.gz
+    linux-amd64: sha256:5e8c5a74fe6470dd7e055a461acda8bb4050ead8c2df70f227e3ff7d8eb7eeb6
+    # https://storage.googleapis.com/golang/go1.19.2.linux-armv6l.tar.gz
+    linux-armv6l: sha256:f3ccec7816ecd704ebafd130b08b8ad97c55402a8193a107b63e9de12ab90118
+    # https://storage.googleapis.com/golang/go1.19.2.linux-arm64.tar.gz
+    linux-arm64: sha256:b62a8d9654436c67c14a0c91e931d50440541f09eb991a987536cb982903126d
+    # https://storage.googleapis.com/golang/go1.19.2.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:37e1d4342f7103aeb9babeabe8c71ef3dba23db28db525071119e94b2aa21d7d
+    # https://storage.googleapis.com/golang/go1.19.2.linux-s390x.tar.gz
+    linux-s390x: sha256:51b45dec41295215df17f78e67d1a373b9dda97a5e539bed440974da5ffc97de
+    # https://storage.googleapis.com/golang/go1.19.2.windows-386.zip
+    windows-386: sha256:9355b09b23e9db33945a7ba45bb75981ab0bb6006713099732167722cf081b53
+    # https://storage.googleapis.com/golang/go1.19.2.windows-amd64.zip
+    windows-amd64: sha256:e132d4f0518b0d417eb6cc5f182c3385f6d24bb2eebee2566cd1a7ab6097e3f2
+    # https://storage.googleapis.com/golang/go1.19.2.windows-arm64.zip
+    windows-arm64: sha256:4049435f77fb2a0642fd8740c588aadbcc446056e637e835a8e223fdb897cb3e

@@ -1,4 +1,6 @@
 ---
+go_os: '{{ ansible_system | lower }}'
+go_arch: '{{ go_arch_map[ansible_architecture] }}'
 go_platform: '{{ go_os }}-{{ go_arch }}'
 go_name: go{{ go_ver }}.{{ go_platform }}
 go_tgz: '{{ go_name }}.tar.gz'
