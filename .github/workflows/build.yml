@@ -19,8 +19,8 @@ jobs:
         ref: develop
         repository: andrewrothstein/tasks
     - name: 'task #ftw'
-      run: task -t taskmono/ansible-test-role.yml "targetuser=${{ matrix.os}}" "targetpwd=${{
-        github.token }}" "alltags=${{ matrix.os }}"
+      run: task -t taskmono/ansible-test-role.yml "targetuser=${{ github.actor }}"
+        "targetpwd=${{ github.token }}" "alltags=${{ matrix.os }}"
     strategy:
       fail-fast: false
       matrix:
