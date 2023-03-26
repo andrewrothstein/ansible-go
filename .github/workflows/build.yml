@@ -10,6 +10,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: install task
       uses: arduino/setup-task@v1
+      with:
+        repo-token: ${{ github.token }}
     - name: task ver
       run: task --version
     - name: download task mono
