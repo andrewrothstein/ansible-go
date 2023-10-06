@@ -4,31 +4,30 @@ galaxy_info:
   company: BlackRock
   description: golang role
   galaxy_tags:
-  - go
-  - golang
-  license:
-  - MIT
+    - go
+    - golang
+  license: MIT
   min_ansible_version: 2.4
   platforms:
-  - name: Archlinux
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - bookworm
-    - bullseye
-  - name: EL
-    versions:
-    - 8
-    - 9
-  - name: Fedora
-    versions:
-    - 37
-    - 38
-  - name: MacOSX
-    versions:
-    - all
-  - name: Ubuntu
-    versions:
-    - focal
-    - jammy
+    - name: Archlinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - bookworm
+        - bullseye
+    - name: EL
+      versions:
+        - 8
+        - 9
+    - name: Fedora
+      versions:
+        - 37
+        - 38
+    - name: MacOSX
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
