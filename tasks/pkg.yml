@@ -1,9 +1,8 @@
 ---
-- name: installing golang packages...
+- name: Installing golang packages...
   become_user: root
   become: '{{ go_privilege_escalation }}'
-  with_items: '{{ go_pkg_list |default([]) }}'
   register: go_installed
-  package:
-    name: '{{ item }}'
+  ansilbe.builtin.package:
+    name: '{{ go_pkg_list | default([]) }}'
     state: present

@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -12,20 +13,21 @@
       paths:
         - '{{ role_path }}/vars'
 
-- include_tasks: '{{ go_installer | default("tgz")  }}.yml'
+- name: Using {{ go_installer | default("tgz") }} installer
+  ansible.builtin.include_tasks: '{{ go_installer | default("tgz")  }}.yml'
 
-- block:
-    - name: ensure profile directory {{ go_profile_dir }} exists
-      file:
-        path: '{{ go_profile_dir }}'
-        state: directory
-        mode: '0755'
-    - name: set go environment variables
-      become_user: root
-      become: '{{ go_privilege_escalation }}'
-      with_items:
-        - go.sh
-      template:
-        src: '{{ item }}.j2'
-        dest: '{{ go_profile_dir }}/{{ item }}'
-        mode: 0644
+- name: Ensure profile directory {{ go_profile_dir }} exists
+  file:
+    path: '{{ go_profile_dir }}'
+    state: directory
+    mode: '755'
+
+- name: Set go environment variables
+  become_user: root
+  become: '{{ go_privilege_escalation }}'
+  with_items:
+    - go.sh
+  ansible.builtin.template:
+    src: '{{ item }}.j2'
+    dest: '{{ go_profile_dir }}/{{ item }}'
+    mode: '644'

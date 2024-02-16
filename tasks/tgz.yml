@@ -1,56 +1,57 @@
 ---
-- name: check for install in {{ go_dir }}...
+- name: Check for install in {{ go_dir }}...
   become: '{{ go_privilege_escalation }}'
-  stat:
+  ansible.builtin.stat:
     path: '{{ go_dir }}'
   changed_when: false
   register: go_binary
-- when: not go_binary.stat.exists
+- name: Downloading and installing go
+  when: not go_binary.stat.exists
   block:
-    - name: download go archive from {{ go_tgz_url }}...
+    - name: Download go archive from {{ go_tgz_url }}...
       become: '{{ go_privilege_escalation }}'
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ go_tgz_url }}'
         dest: '{{ go_tmp_tgz }}'
         checksum: '{{ go_checksum }}'
-        mode: '0644'
-    - name: creating {{ go_dir }}...
+        mode: '644'
+    - name: Creating {{ go_dir }}...
       become: '{{ go_privilege_escalation }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ go_dir }}'
         state: directory
-        mode: '0755'
-    - name: unarchiving to {{ go_dir }} creating {{ go_dir }}/go...
+        mode: '755'
+    - name: Unarchiving to {{ go_dir }} creating {{ go_dir }}/go...
       become: '{{ go_privilege_escalation }}'
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ go_tmp_tgz }}'
         dest: '{{ go_dir }}'
         creates: '{{ go_dir }}/go'
   always:
-    - name: rm {{ go_tmp_tgz }}
+    - name: Rm {{ go_tmp_tgz }}
       become: '{{ go_privilege_escalation }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ go_tmp_tgz }}'
         state: absent
-- name: linking {{ go_parent_dir }}/go to {{ go_dir }}/go...
+- name: Linking {{ go_parent_dir }}/go to {{ go_dir }}/go...
   become: '{{ go_privilege_escalation }}'
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ go_dir }}/go'
     dest: '{{ go_parent_dir }}/go'
     state: link
-- name: linking executables...
+- name: Linking executables...
   become: '{{ go_privilege_escalation }}'
   become_user: root
   with_items:
     - go
     - gofmt
-  file:
+  ansible.builtin.file:
     src: '{{ go_parent_dir }}/go/bin/{{ item }}'
     dest: '{{ go_parent_dir }}/bin/{{ item }}'
     state: link
