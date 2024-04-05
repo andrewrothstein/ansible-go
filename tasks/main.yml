@@ -14,10 +14,10 @@
         - '{{ role_path }}/vars'
 
 - name: Using {{ go_installer | default("tgz") }} installer
-  ansible.builtin.include_tasks: '{{ go_installer | default("tgz")  }}.yml'
+  ansible.builtin.include_tasks: '{{ go_installer | default("tgz") }}.yml'
 
 - name: Ensure profile directory {{ go_profile_dir }} exists
-  file:
+  ansible.builtin.file:
     path: '{{ go_profile_dir }}'
     state: directory
     mode: '755'

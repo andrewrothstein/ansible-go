@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.go
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/go/bin/go version
+    - name: Executing 'go version'
+      ansible.builtin.command: /usr/local/go/bin/go version
+      changed_when: false
       register: go_test_output
-    - debug:
+    - name: Output from 'go version'
+      ansible.builtin.debug:
         msg: '{{ go_test_output.stdout }}'
