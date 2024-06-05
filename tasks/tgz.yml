@@ -23,6 +23,9 @@
         path: '{{ go_dir }}'
         state: directory
         mode: '755'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
     - name: Unarchiving to {{ go_dir }} creating {{ go_dir }}/go...
       become: '{{ go_privilege_escalation }}'
       become_user: root
