@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 DIR=~/Downloads
-MIRROR=https://storage.googleapis.com/golang
+MIRROR=https://go.dev/dl
 
 dl()
 {
@@ -39,6 +39,4 @@ dl_ver ()
     dl $ver windows arm64 zip
 }
 
-dl_ver 1.25.2
-dl_ver 1.25.3
-dl_ver ${1:-1.25.4}
+dl_ver ${1:-1.25.5}

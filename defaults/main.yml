@@ -1,6 +1,6 @@
 ---
-go_mirror: https://storage.googleapis.com/golang
-go_ver: '1.25.4'
+go_mirror: https://go.dev/dl
+go_ver: '1.25.5'
 go_arch_map:
   386: 386
   aarch64: arm64
@@ -2668,3 +2668,30 @@ go_checksums:
     windows-amd64: sha256:6dad204d42719795f22067553b2b042c0e710b32c5a00f6c67892865167fdfd0
     # https://storage.googleapis.com/golang/go1.25.4.windows-arm64.zip
     windows-arm64: sha256:138aa10a6808b4cff8657478be14772a05335bc8d7e51955e7a6d9ac335af3e4
+  '1.25.5':
+    # https://go.dev/dl/go1.25.5.darwin-amd64.tar.gz
+    darwin-amd64: sha256:b69d51bce599e5381a94ce15263ae644ec84667a5ce23d58dc2e63e2c12a9f56
+    # https://go.dev/dl/go1.25.5.darwin-arm64.tar.gz
+    darwin-arm64: sha256:bed8ebe824e3d3b27e8471d1307f803fc6ab8e1d0eb7a4ae196979bd9b801dd3
+    # https://go.dev/dl/go1.25.5.freebsd-386.tar.gz
+    freebsd-386: sha256:f8ff9fa5309fbbbd7d52f5d3f7181feb830dfd044d23c38746a2ada091f751b5
+    # https://go.dev/dl/go1.25.5.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:a2d2b2aeb218bd646fd8708bacc96c9d4de1b6c9ea48ceb9171e9e784f676650
+    # https://go.dev/dl/go1.25.5.linux-386.tar.gz
+    linux-386: sha256:db908a86e888574ed3432355ba5372ad3ef2c0821ba9b91ceaa0f6634620c40c
+    # https://go.dev/dl/go1.25.5.linux-amd64.tar.gz
+    linux-amd64: sha256:9e9b755d63b36acf30c12a9a3fc379243714c1c6d3dd72861da637f336ebb35b
+    # https://go.dev/dl/go1.25.5.linux-armv6l.tar.gz
+    linux-armv6l: sha256:0b27e3dec8d04899d6941586d2aa2721c3dee67c739c1fc1b528188f3f6e8ab5
+    # https://go.dev/dl/go1.25.5.linux-arm64.tar.gz
+    linux-arm64: sha256:b00b694903d126c588c378e72d3545549935d3982635ba3f7a964c9fa23fe3b9
+    # https://go.dev/dl/go1.25.5.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:f0904b647b5b8561efc5d48bb59a34f2b7996afab83ccd41c93b1aeb2c0067e4
+    # https://go.dev/dl/go1.25.5.linux-s390x.tar.gz
+    linux-s390x: sha256:a5d0a72b0dfd57f9c2c0cdd8b7e0f401e0afb9e8c304d3410f9b0982ce0953da
+    # https://go.dev/dl/go1.25.5.windows-386.zip
+    windows-386: sha256:a593393ea7715ffd315158f622a76226c3a4c4a0a6f92b1aeae03d7380cc06a3
+    # https://go.dev/dl/go1.25.5.windows-amd64.zip
+    windows-amd64: sha256:ae756cce1cb80c819b4fe01b0353807178f532211b47f72d7fa77949de054ebb
+    # https://go.dev/dl/go1.25.5.windows-arm64.zip
+    windows-arm64: sha256:55a94a423a6b8f3ac2ac4d05a6e44d7760c6520a2c6dcef7425f6bac79c4eece
