@@ -1,6 +1,6 @@
 ---
 go_mirror: https://go.dev/dl
-go_ver: '1.25.6'
+go_ver: '1.26.1'
 go_arch_map:
   386: 386
   aarch64: arm64
@@ -2722,3 +2722,111 @@ go_checksums:
     windows-amd64: sha256:19b4733b727ba5c611b5656187f3ac367d278d64c3d4199a845e39c0fdac5335
     # https://go.dev/dl/go1.25.6.windows-arm64.zip
     windows-arm64: sha256:8f2d8e6dd0849a2ec0ade1683bcfb7809e64d264a4273d8437841000a28ffb60
+  '1.25.7':
+    # https://go.dev/dl/go1.25.7.darwin-amd64.tar.gz
+    darwin-amd64: sha256:bf5050a2152f4053837b886e8d9640c829dbacbc3370f913351eb0904cb706f5
+    # https://go.dev/dl/go1.25.7.darwin-arm64.tar.gz
+    darwin-arm64: sha256:ff18369ffad05c57d5bed888b660b31385f3c913670a83ef557cdfd98ea9ae1b
+    # https://go.dev/dl/go1.25.7.freebsd-386.tar.gz
+    freebsd-386: sha256:a2de97c8ac74bf64b0ae73fe9d379e61af530e061bc7f8f825044172ffe61a8b
+    # https://go.dev/dl/go1.25.7.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:055f9e138787dcafa81eb0314c8ff70c6dd0f6dba1e8a6957fef5d5efd1ab8fd
+    # https://go.dev/dl/go1.25.7.linux-386.tar.gz
+    linux-386: sha256:2866517e9ca81e6a2e85a930e9b11bc8a05cfeb2fc6dc6cb2765e7fb3c14b715
+    # https://go.dev/dl/go1.25.7.linux-amd64.tar.gz
+    linux-amd64: sha256:12e6d6a191091ae27dc31f6efc630e3a3b8ba409baf3573d955b196fdf086005
+    # https://go.dev/dl/go1.25.7.linux-armv6l.tar.gz
+    linux-armv6l: sha256:1ba07e0eb86b839e72467f4b5c7a5597d07f30bcf5563c951410454f7cda5266
+    # https://go.dev/dl/go1.25.7.linux-arm64.tar.gz
+    linux-arm64: sha256:ba611a53534135a81067240eff9508cd7e256c560edd5d8c2fef54f083c07129
+    # https://go.dev/dl/go1.25.7.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:42124c0edc92464e2b37b2d7fcd3658f0c47ebd6a098732415a522be8cb88e3f
+    # https://go.dev/dl/go1.25.7.linux-s390x.tar.gz
+    linux-s390x: sha256:c6b77facf666dc68195ecab05dbf0ebb4e755b2a8b7734c759880557f1c29b0c
+    # https://go.dev/dl/go1.25.7.windows-386.zip
+    windows-386: sha256:baa6b488291801642fa620026169e38bec2da2ac187cd3ae2145721cf826bbc3
+    # https://go.dev/dl/go1.25.7.windows-amd64.zip
+    windows-amd64: sha256:c75e5f4ff62d085cc0017be3ad19d5536f46825fa05db06ec468941f847e3228
+    # https://go.dev/dl/go1.25.7.windows-arm64.zip
+    windows-arm64: sha256:807033f85931bc4a589ca8497535dcbeb1f30d506e47fa200f5f04c4a71c3d9f
+  '1.25.8':
+    # https://go.dev/dl/go1.25.8.darwin-amd64.tar.gz
+    darwin-amd64: sha256:a0b8136598baf192af400051cee2481ffb407f4c113a81ff400896e26cbce9e4
+    # https://go.dev/dl/go1.25.8.darwin-arm64.tar.gz
+    darwin-arm64: sha256:c6547959f5dbe8440bf3da972bd65ba900168de5e7ab01464fbdc7ac8375c21c
+    # https://go.dev/dl/go1.25.8.freebsd-386.tar.gz
+    freebsd-386: sha256:6b28b9c531706fd6cbb8c197b70a31ade42aa3aa537102dcfdcfb516c20852cf
+    # https://go.dev/dl/go1.25.8.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:660cb8e324633c27bf9a002fa9431b403c74990d124caaf14282db5fb514d183
+    # https://go.dev/dl/go1.25.8.linux-386.tar.gz
+    linux-386: sha256:40530cd40ccfa4c9934663c1d6c4ef6fb1651db70ffd50af6687520f51b311bb
+    # https://go.dev/dl/go1.25.8.linux-amd64.tar.gz
+    linux-amd64: sha256:ceb5e041bbc3893846bd1614d76cb4681c91dadee579426cf21a63f2d7e03be6
+    # https://go.dev/dl/go1.25.8.linux-armv6l.tar.gz
+    linux-armv6l: sha256:cda7e553fa9f6d39e48ed9061bd3da47f6a30b398179d1b2a2f50d9853cafcae
+    # https://go.dev/dl/go1.25.8.linux-arm64.tar.gz
+    linux-arm64: sha256:7d137f59f66bb93f40a6b2b11e713adc2a9d0c8d9ae581718e3fad19e5295dc7
+    # https://go.dev/dl/go1.25.8.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:28ed144a945e4d7188c93f8d85fb772a98ed18f8f9f8d3a650696b739f8cc57c
+    # https://go.dev/dl/go1.25.8.linux-s390x.tar.gz
+    linux-s390x: sha256:5496dec036f044ba9833db5d1748b6335a679b61f95ac448bdc356a8a7cbcb10
+    # https://go.dev/dl/go1.25.8.windows-386.zip
+    windows-386: sha256:1a48143752863d7a35223f5e1587315e4fa2db7d77695d6ccb11ee5c37b32739
+    # https://go.dev/dl/go1.25.8.windows-amd64.zip
+    windows-amd64: sha256:8d4ed9a270b33df7a6d3ff3a5316e103e0042fcc4f0c9a80e40378700bab6794
+    # https://go.dev/dl/go1.25.8.windows-arm64.zip
+    windows-arm64: sha256:0ffaef4a9617a8819294b5f52aefca1415dce644a70f5ad155676293ab052a31
+  '1.26.0':
+    # https://go.dev/dl/go1.26.0.darwin-amd64.tar.gz
+    darwin-amd64: sha256:1ca28b7703cbea05a65b2a1d92d6b308610ef92f8824578a0874f2e60c9d5a22
+    # https://go.dev/dl/go1.26.0.darwin-arm64.tar.gz
+    darwin-arm64: sha256:b1640525dfe68f066d56f200bef7bf4dce955a1a893bd061de6754c211431023
+    # https://go.dev/dl/go1.26.0.freebsd-386.tar.gz
+    freebsd-386: sha256:9f07792e085f0d212c75ba403cb73e7f2f71eace48a38fab58711270dd7b1cef
+    # https://go.dev/dl/go1.26.0.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:7bba5a430d2c562af87b6c1a31cccf72c43107b7318b48aa8a02441df61acd08
+    # https://go.dev/dl/go1.26.0.linux-386.tar.gz
+    linux-386: sha256:35e2ec7a7ae6905a1fae5459197b70e3fcbc5e0a786a7d6ba8e49bcd38ad2e26
+    # https://go.dev/dl/go1.26.0.linux-amd64.tar.gz
+    linux-amd64: sha256:aac1b08a0fb0c4e0a7c1555beb7b59180b05dfc5a3d62e40e9de90cd42f88235
+    # https://go.dev/dl/go1.26.0.linux-armv6l.tar.gz
+    linux-armv6l: sha256:3f6b48d96f0d8dff77e4625aa179e0449f6bbe79b6986bfa711c2cfc1257ebd8
+    # https://go.dev/dl/go1.26.0.linux-arm64.tar.gz
+    linux-arm64: sha256:bd03b743eb6eb4193ea3c3fd3956546bf0e3ca5b7076c8226334afe6b75704cd
+    # https://go.dev/dl/go1.26.0.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:3066b2284b554da76cf664d217490792ba6f292ec0fc20bf9615e173cc0d2800
+    # https://go.dev/dl/go1.26.0.linux-s390x.tar.gz
+    linux-s390x: sha256:d62137f11530b97f3503453ad7d9e570af070770599fb8054f4e8cd0e905a453
+    # https://go.dev/dl/go1.26.0.windows-386.zip
+    windows-386: sha256:50674f3d6a071fa1a4c1d76dc37fafa0330df87d84087a262fee020da5396b6b
+    # https://go.dev/dl/go1.26.0.windows-amd64.zip
+    windows-amd64: sha256:9bbe0fc64236b2b51f6255c05c4232532b8ecc0e6d2e00950bd3021d8a4d07d4
+    # https://go.dev/dl/go1.26.0.windows-arm64.zip
+    windows-arm64: sha256:73bdbb9f64aa152758024485c5243a1098182bb741fcc603b6fb664ee5e0fe35
+  '1.26.1':
+    # https://go.dev/dl/go1.26.1.darwin-amd64.tar.gz
+    darwin-amd64: sha256:65773dab2f8cc4cd23d93ba6d0a805de150ca0b78378879292be0b903b8cdd08
+    # https://go.dev/dl/go1.26.1.darwin-arm64.tar.gz
+    darwin-arm64: sha256:353df43a7811ce284c8938b5f3c7df40b7bfb6f56cb165b150bc40b5e2dd541f
+    # https://go.dev/dl/go1.26.1.freebsd-386.tar.gz
+    freebsd-386: sha256:afb86dcd5240cf93627171a169973c75d9d139a69ed8e0be120d49b24943c13f
+    # https://go.dev/dl/go1.26.1.freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:d89034a0b54fdc234815fecfb76d7d06a7d180d7a6124aa47715a4cacc9fe999
+    # https://go.dev/dl/go1.26.1.linux-386.tar.gz
+    linux-386: sha256:da75d696c6b9440fe9fb6418429f29eaeee947707ee8c6ddb567c558051a1cc2
+    # https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
+    linux-amd64: sha256:031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a
+    # https://go.dev/dl/go1.26.1.linux-armv6l.tar.gz
+    linux-armv6l: sha256:c9937198994dc173b87630a94a0d323442bef81bf7589b1170d55a8ebf759bda
+    # https://go.dev/dl/go1.26.1.linux-arm64.tar.gz
+    linux-arm64: sha256:a290581cfe4fe28ddd737dde3095f3dbeb7f2e4065cab4eae44dfc53b760c2f7
+    # https://go.dev/dl/go1.26.1.linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:f56eed002998f5f51fa07fd4ed0c5de5e02d51cec7a4007f771c7576620d9d45
+    # https://go.dev/dl/go1.26.1.linux-s390x.tar.gz
+    linux-s390x: sha256:60fe623ef63e6338c055ec0e0e3f4fa85c97a056de2d2f6ee38591e2bfa9cdde
+    # https://go.dev/dl/go1.26.1.windows-386.zip
+    windows-386: sha256:6a26b7ce038d96d2b3457ea4933667fb85c896411860216daf6ea17ecd4b25c5
+    # https://go.dev/dl/go1.26.1.windows-amd64.zip
+    windows-amd64: sha256:9b68112c913f45b7aebbf13c036721264bbba7e03a642f8f7490c561eebd1ecc
+    # https://go.dev/dl/go1.26.1.windows-arm64.zip
+    windows-arm64: sha256:c17e09676be0faad3cbed1c81bb02f38fb73e2f93d048571cc13730fe23f2d5b
