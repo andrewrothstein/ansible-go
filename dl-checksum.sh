@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
-DIR=~/Downloads
+set -e
+DIR=$(mktemp -d)
+trap 'rm -rf "$DIR"' EXIT
 MIRROR=https://go.dev/dl
 
 dl()
@@ -12,12 +14,16 @@ dl()
     local file=go$ver.$platform.$suffix
     local dlfile=$DIR/$file
     local url=$MIRROR/$file
-    if [ ! -e $dlfile ]
+    curl -fsSL --proto '=https' --tlsv1.2 -o "$dlfile" "$url"
+    local sum
+    sum=$(sha256sum "$dlfile" | awk '{print $1}')
+    if ! printf '%s' "$sum" | grep -Eq '^[0-9a-f]{64}$'
     then
-        curl -sSLf -o $dlfile $url
+        echo "bad or missing checksum for $url: '$sum'" >&2
+        exit 1
     fi
-    printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform `sha256sum $dlfile | awk '{print $1}'`
+    printf "    # %s\n" "$url"
+    printf "    %s: sha256:%s\n" "$platform" "$sum"
 }
 
 dl_ver ()
@@ -39,4 +45,4 @@ dl_ver ()
     dl $ver windows arm64 zip
 }
 
-dl_ver ${1:-1.26.4}
+dl_ver ${1:-1.27.4}
