@@ -39,4 +39,4 @@ dl_ver ()
     dl $ver windows arm64 zip
 }
 
-dl_ver ${1:-1.26.4}
+dl_ver ${1:-1.27.4}
